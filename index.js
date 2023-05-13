@@ -10,7 +10,7 @@ const upload = require('./multer')
 const { uploadImage } = require('./uploaderFunction');
 
 
-
+//  NOTE: anywhere you see pcare, change it to the name images coming from the client is assigned.
 app.post('/upload', upload.array("pcare"), async (req, res) => {
 
     const urls = await uploadImage(req.files)
