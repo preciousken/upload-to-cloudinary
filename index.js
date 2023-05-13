@@ -9,9 +9,9 @@ const app = express();
 app.use(cors())
 app.use(express.json())
 
-app.use("/upload-images", upload.array("image"),async(req,res)=>{
+app.use("/upload-images", upload.array("image") ,async(req,res)=>{ // upload.array("name of image from frontend")
 
-    const uploader = async (path) => await cloudinary.uploads(path,"images")
+    const uploader = async (path) => await cloudinary.uploads(path,"pcare")// (path, "name of folder in cloudinary")
 
     if(req.method === "POST"){
         const urls = []
@@ -43,5 +43,5 @@ app.get('/',async(req,res)=>{
 const port = process.env.PORT || 5000
 
 app.listen(port,()=>{
-    console.log('app listening on port'+port);
+    console.log('app listening on port '+port);
 })
