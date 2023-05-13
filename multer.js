@@ -12,7 +12,6 @@ const storage = multer.diskStorage({
     }
 })
 
-
 // file validation
 const fileFilter = (req,file,cb) => {
     if(file.mimetype === "image/jpeg" || file.mimetype === "image/png"){
@@ -23,6 +22,7 @@ const fileFilter = (req,file,cb) => {
         cb({message: "unsupported file format"}, false)
     }
 }
+
 
 const upload = multer({
     storage: storage,

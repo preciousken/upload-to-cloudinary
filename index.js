@@ -9,14 +9,17 @@ const app = express();
 app.use(cors())
 app.use(express.json())
 
-app.use("/upload-images", upload.array("image") ,async(req,res)=>{ // upload.array("name of image from frontend")
+app.use("/upload-images", upload.array("image") , async(req,res)=>{                                                                 // upload.array("name of image from frontend")
 
-    const uploader = async (path) => await cloudinary.uploads(path,"pcare")// (path, "name of folder in cloudinary")
+    console.log('second');
+
+    const uploader = async (path) => await cloudinary.uploads(path,"pcare")                                                         // (path, "name of folder in cloudinary")
 
     if(req.method === "POST"){
         const urls = []
         const files = req.files
 
+        console.log(files);
         
         for(const file of files){
             const {path} = file
