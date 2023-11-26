@@ -19,8 +19,10 @@ console.log(file.mimetype)
 if(
     file.mimetype === "image/jpeg" || 
     file.mimetype === "image/png" || 
-    file.mimetype === "application/pdf" ||
-    file.mimetype === "audio/mpeg"){
+    file.mimetype === "audio/mpeg" ||
+    file.mimetype === "text/plain" ||
+    file.mimetype === "application/pdf" 
+    ){
     cb(null, true)
 }
 else{
