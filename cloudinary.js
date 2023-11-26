@@ -19,6 +19,7 @@ exports.uploads = (file, folder) => {
             })
         }, {
             resource_type: "auto",
+            // resource_type: "raw",
             folder: folder
         })
     })

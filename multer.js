@@ -20,8 +20,7 @@ if(
     file.mimetype === "image/jpeg" || 
     file.mimetype === "image/png" || 
     file.mimetype === "audio/mpeg" ||
-    file.mimetype === "text/plain" ||
-    file.mimetype === "application/pdf" 
+    file.mimetype === "text/plain"
     ){
     cb(null, true)
 }
